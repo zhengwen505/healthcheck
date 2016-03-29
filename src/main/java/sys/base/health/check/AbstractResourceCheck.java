@@ -22,7 +22,7 @@ public abstract class AbstractResourceCheck implements ResourceCheck {
                 afterCheckFail();
             }
         } catch (Exception e) {
-            LOGGER.error("resource health check fail");
+            LOGGER.error("resource health check fail", e);
             afterCheckFail();
         }
 
@@ -40,7 +40,7 @@ public abstract class AbstractResourceCheck implements ResourceCheck {
      * 
      * @param time
      */
-    public void heartBeatThreadSleep(long time) {
+    public void currentThreadSleep(long time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {

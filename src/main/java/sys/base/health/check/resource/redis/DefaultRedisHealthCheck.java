@@ -45,7 +45,7 @@ public class DefaultRedisHealthCheck extends AbstractResourceCheck {
 
     private void afterGetConnectionFail(JedisPool jedisPool, int tryCount, Exception e) {
         LOG.error("get connection fail,current try count is " + tryCount, e);
-        heartBeatThreadSleep(getConnectionFailRetryTimeGap);
+        currentThreadSleep(getConnectionFailRetryTimeGap);
         getRedisConnection(jedisPool, tryCount);
     }
 
