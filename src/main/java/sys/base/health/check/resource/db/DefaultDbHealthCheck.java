@@ -10,6 +10,11 @@ import org.slf4j.LoggerFactory;
 
 import sys.base.health.check.AbstractResourceCheck;
 
+/**
+ * default datasource health check
+ * @author zhengwen
+ *
+ */
 public class DefaultDbHealthCheck extends AbstractResourceCheck {
     private static final Logger LOG = LoggerFactory.getLogger(DefaultDbHealthCheck.class);
     // 对一个数据库检查连接是否存在最大尝试次数，超过则报警
