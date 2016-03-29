@@ -54,6 +54,7 @@ public class DefaultRedisHealthCheck extends AbstractResourceCheck {
             JedisPool jedisPool = getRealMonitorEntity();
             jedisPool.returnResource(jedis);
         } catch (Exception e) {
+            LOG.error("release redis connection fail", e);
         }
     }
 
