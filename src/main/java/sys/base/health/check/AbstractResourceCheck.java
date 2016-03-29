@@ -28,7 +28,8 @@ public abstract class AbstractResourceCheck implements ResourceCheck {
 
     }
 
-    protected void handleDifferentResourceWhenGetResourceFailIfYouWantSomeSpecificRequest(int tryCount, Exception e) {
+    protected void handleDifferentResourceWhenGetResourceFailIfhaveSpecificRequest(int tryCount, Exception e) {
+
     }
 
     public Resource getResource() {

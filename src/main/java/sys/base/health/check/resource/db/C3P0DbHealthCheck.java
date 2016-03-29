@@ -15,7 +15,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 public class C3P0DbHealthCheck extends DefaultDbHealthCheck {
     private static final Logger LOGGER = LoggerFactory.getLogger(C3P0DbHealthCheck.class);
 
-    protected void handleDifferentResourceWhenGetResourceFailIfYouWantSomeSpecificRequest(int tryCount, Exception e) {
+    protected void handleDifferentResourceWhenGetResourceFailIfhaveSpecificRequest(int tryCount, Exception e) {
         DataSource dataSource = getRealMonitorEntity();
         if (dataSource instanceof ComboPooledDataSource) {
             ComboPooledDataSource comboPooledDataSource = (ComboPooledDataSource) dataSource;

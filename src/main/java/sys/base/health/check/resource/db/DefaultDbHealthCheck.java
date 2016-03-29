@@ -77,7 +77,7 @@ public class DefaultDbHealthCheck extends AbstractResourceCheck {
      * @param e just for log
      */
     private void afterGetConnectionFail(DataSource dataSource, int tryCount, SQLException e) {
-        handleDifferentResourceWhenGetResourceFailIfYouWantSomeSpecificRequest(tryCount, e);
+        handleDifferentResourceWhenGetResourceFailIfhaveSpecificRequest(tryCount, e);
         LOG.error("get connection fail,current try count is " + tryCount, e);
         currentThreadSleep(getConnectionFailRetryTimeGap);
         getDataSourceConnect(dataSource, tryCount);
