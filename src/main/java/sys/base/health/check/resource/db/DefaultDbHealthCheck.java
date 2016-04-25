@@ -51,9 +51,11 @@ public class DefaultDbHealthCheck extends AbstractResourceCheck {
             connection = dataSource.getConnection();
         } catch (SQLException e) {
             afterGetConnectionFail(dataSource, tryCount, e);
+            return;
         }
         if (connection == null) {
             afterGetConnectionFail(dataSource, tryCount, SQL_EXCEPTION);
+            return;
         }
         LOG.info("get connection success");
         releaseConnection(connection);
